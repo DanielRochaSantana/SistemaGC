@@ -1,0 +1,81 @@
+﻿@model PrjGestaoClientes.Domain.Model.ClienteModel
+@{
+    ViewData["Title"] = "Adicionar ou Atualizar Registro";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Adicionar ou Atualizar Registro</h2>
+</div>
+
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        <table>
+            <tr> <td><h1>&nbsp;</h1></td></tr>
+            <tr>
+                <td>
+                    <h3>
+                        Adicionar/Editar Cliente
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Nome):
+                </td>
+                <td>
+                    <div>
+                        @Html.TextBoxFor(model => model.Nome)
+                        @Html.ValidationMessageFor(model => model.Nome)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.RG):
+                </td>
+                <td>
+                    <div>
+                        @Html.TextBoxFor(model => model.RG)
+                        @Html.ValidationMessageFor(model => model.RG)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.CPF):
+                </td>
+                <td>
+                    <div>
+                        @Html.TextBoxFor(model => model.CPF)
+                        @Html.ValidationMessageFor(model => model.CPF)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @Html.HiddenFor(model => model.Id)                    
+                        @Html.HiddenFor(model => model.IsEdit)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        @if (Model.IsEdit)
+                        {
+                            <input id="btnAdd" type="submit" value="Atualizar" />
+                        }
+                        else if (!Model.IsEdit)
+                        {
+                            <input id="btnAdd" type="submit" value="Adicionar" />
+                        }
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

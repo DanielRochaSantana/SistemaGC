@@ -1,0 +1,46 @@
+﻿@model IList<PrjGestaoClientes.Domain.Model.Entity.Cliente>
+@{
+    ViewData["Title"] = "Gerenciar Clientes";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Gereciar Clientes</h1>
+</div>
+
+<h1 style="text-align: center;">&nbsp;</h1>
+<h2 style="text-align: center;">Clientes</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Data de Cadastro</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.CPF</td>
+                <td>@item.RG</td>
+                <td>@item.DataCadastro</td>
+                <td>@Html.ActionLink("Editar", "AdicionarOuAtualizarRegistro", new { Id = @item.Id }) / @Html.ActionLink("Apagar", "RemoverRegistro", new { Id = @item.Id })</td>
+            </tr>
+
+        }
+
+        <tr>
+            <td colspan="5" align="center">
+                <div>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Administrar" asp-action="AdicionarOuAtualizarRegistro">Adicionar</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

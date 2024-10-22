@@ -1,0 +1,53 @@
+@model PrjGestaoClientes.Domain.Model.UserModel
+@{
+    ViewData["Title"] = "Login";
+}
+<div class="text-center">
+    <h2 class="display-4">Login</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+
+    <div>
+        <table>
+            <tr> <td><h1>&nbsp;</h1></td></tr>
+            <tr>
+                <td>
+                    <h3>
+                        Efetuar Login
+                    </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Username):
+                </td>
+                <td>
+                    <div>
+                        @Html.TextBoxFor(model => model.Username)
+                        @Html.ValidationMessageFor(model => model.Username)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Password):
+                </td>
+                <td>
+                    <div>
+                        @Html.TextBoxFor(model => model.Password)
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                        <input id="btnAdd" type="submit" value="Efetuar Login" />
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+}

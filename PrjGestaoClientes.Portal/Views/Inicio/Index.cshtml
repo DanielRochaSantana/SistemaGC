@@ -1,0 +1,36 @@
+﻿@model IList<PrjGestaoClientes.Domain.Model.Entity.Cliente>
+@{
+    ViewData["Title"] = "Sistema de Gerenciamento de Clientes";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sistema de Gerenciamento de Clientes</h1>
+</div>
+
+<h1 style="text-align: center;">&nbsp;</h1>
+<h2 style="text-align: center;">Clientes</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>RG</th>
+            <th>Data de Cadastro</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.CPF</td>
+                <td>@item.RG</td>
+                <td>@item.DataCadastro</td>
+            </tr>
+
+        }
+    </tbody>
+</table>

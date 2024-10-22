@@ -1,0 +1,6 @@
+@PrjGestaoClientes.GerenciarClientes_HostAddress = http://localhost:5128
+
+GET {{PrjGestaoClientes.GerenciarClientes_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
